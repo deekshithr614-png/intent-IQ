@@ -1,0 +1,35 @@
+BHASHASENSE - DATA SPRINT 2.0 WORKING MODEL
+==========================================
+
+WHAT IS INCLUDED
+- app.py: Streamlit interface (Overview, Live Classifier, Batch Prediction, Model Insights)
+- train.py: trains/validates the NLP model using data/train.csv
+- predict.py: writes outputs/submission.csv from data/test.csv
+- modeling.py and text_utils.py: model and text normalization logic
+- data/: the supplied train.csv, test.csv and sample_submission.csv
+- models/: a trained model artifact, ready to use
+- outputs/: validation metrics and an example submission
+
+WINDOWS / VS CODE SETUP
+1. Extract this ZIP file to a normal folder (not inside the ZIP preview).
+2. In VS Code, choose File > Open Folder and open the extracted BhashaSense_Working_Model folder.
+3. Choose Terminal > New Terminal. Check that the terminal path ends with BhashaSense_Working_Model.
+4. Create a virtual environment:
+   python -m venv .venv
+5. Install dependencies:
+   .\.venv\Scripts\python.exe -m pip install -r requirements-ui.txt
+6. Start the website:
+   .\.venv\Scripts\python.exe -m streamlit run app.py
+7. Open http://localhost:8501 in your browser if it does not open automatically.
+
+IMPORTANT
+- Use 'python', not 'py', because this computer's Windows Python Launcher command was not recognized.
+- The model is already trained and included. You do NOT need to run train.py just to open the website.
+- To retrain the model from the bundled train.csv, run:
+   .\.venv\Scripts\python.exe train.py
+  This replaces the saved model and refreshes validation reports.
+- To generate a new competition file, run:
+   .\.venv\Scripts\python.exe predict.py
+  The output is outputs/submission.csv.
+- Class 55 is Out-of-Scope. The dataset does not provide human-readable names for classes 0-54.
+- SVM decision scores shown in the interface are ranking scores, not calibrated probabilities.
