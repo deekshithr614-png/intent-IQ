@@ -1,4 +1,4 @@
-# BhashaSense — Data Sprint 2.0 Working NLP Model
+# Intent IQ — Data Sprint 2.0 Working NLP Model
 
 BhashaSense is a runnable Hinglish/Hindi intent classifier built from the supplied Data Sprint 2.0 CSV files.
 
